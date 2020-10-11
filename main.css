@@ -27,34 +27,62 @@ p{
 *{
     box-sizing: border-box;  /* чтобы паддинги не растягивали блок - паддинги уходят внутрь блока */
 }
+body, html{
+    height: 100%;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+    min-width: 1200px;
+}
 .main-page-wrapper{
-    background: url(./images/bg/lion-header.jpg) center top no-repeat, url(./images/bg/bottom-pic.png) right bottom 307px no-repeat;
+    background: url(images/bg/lion-header.jpg) center top no-repeat, url(images/bg/bottom-pic.png) right bottom 307px no-repeat;
 }
 .container{
     margin: 0 auto;
     width: 1140px;
     position: relative; /* под вопросом */
 }
+.hero__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+}
 .header{
-    height: 120px;
-    position: relative;
-    margin-bottom: 139px;
+    padding-top: 45px;
+    /* height: 120px;
+    position: relative; */
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__col{
+    display: flex;
+    align-items: center;
+}
+.header__col--align--right{
+    justify-content: flex-end;
 }
 .logo{
     display: block; /*придаем ссылке блочное поведение*/
-    position: absolute;
+    margin-right: 100px;
+    /* position: absolute;
     top: 28px;
-    left: 0;
+    left: 0; */
 }
-.menu{
+/* .menu{
     position: absolute;
     top:30px;
-    left:261px;
-}
+    left:261px; 
+} */
 .contacts{
-    position: absolute;
+    /* position: absolute;
     top:14px;
-    right: 0;
+    right: 0; */
     font-style: normal;
     text-align: right;
 }
@@ -91,7 +119,7 @@ p{
     color:#dfb56d;
 }
 .hero__text-section{
-    width: 400px;
+    width: 38%;
 }
 .hero__title{
     font-size: 48px;
@@ -139,15 +167,22 @@ section.hero{
     font-weight: bold;
     margin-bottom: 48px;
 }
+.offers{
+    display: flex;
+    justify-content: space-between;
+}
 .offers__item{
     min-height: 470px;
     background: #fff;
     border-radius: 5px;
-    display: inline-block;
+    /* display: inline-block; */
     margin-right: 22px;
-    width: 362px;
+    width: 33.33%;
+    /* width: calc(100% / 3 - 18px);      // 100% от ширины родителя ; 28px - отступы между блочками : 28px * 2 = 56px отступа всего / 3 элемента = 18px */
     color: #010001;
     overflow: hidden;   /* скрыто переполнение блока */
+    display: flex;
+    flex-direction: column;
 }
 .offers__item:last-child{
     margin-right: 0;
@@ -187,6 +222,9 @@ section.hero{
 .offers__content{
     padding: 36px 30px;
     padding-top: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .offers__title{
     font-weight: bold;
@@ -194,9 +232,9 @@ section.hero{
     margin-bottom: 20px;
 }
 .offers__prices-cell{
-    display: inline-block;
+    /* display: inline-block;
     vertical-align: top;
-    width: 123px;
+    width: 123px; */
     margin-right: 19px;
 }
 .offers__prices-cell:last-child{
@@ -213,66 +251,85 @@ section.hero{
 }
 .offers__prices{
     margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 .offers__btn-wrapper{
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
 }
 .news{
     margin-bottom: 47px;
+    display: flex;
+    justify-content: space-between;
 }
-.news__item{
-    width: 555px;
-    height: 394px;
-    display: inline-block;
-    vertical-align: top;
+.single-news{
     position: relative;
     border-radius: 5px;
     overflow: hidden;
-    margin-right: 23px;
+    /* margin-right: 23px; */
+}
+.news__item{
+    /* width: 555px; */
+    height: 394px;
+    margin-right: 2%;
+    flex: 1;
+    /* display: inline-block;
+    vertical-align: top; */
 }
 .news__item:last-child{
     margin-right: 0;
 }
-.news__cover{
+.single-news__cover{
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: .4;     /* картинка заполняет целиком блок */
 }
-.news__text-content{
+.single-news__text-content{
     position: absolute;
     left: 0;
     right: 0;
-    /*bottom: 0;*/
-    padding: 51px 28px;
+    bottom: 0;
+    padding: 25px 32px;
     min-height: 140px;
 }
-.news__date{
+.single-news__date{
     font-size: 14px;
     margin-bottom: 18px;
 }
-.news__title{
+.single-news__title{
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
 }
-.news__desc{
+.single-news__desc{
     margin-bottom: 27px;
 }
 .pager{
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.pager__display, .pager__list{
+/* .pager__display, .pager__list{
     display: inline-block;
     vertical-align: middle;
-}
+} */
 .pager__display{
     margin-right: 26px;
 }
+.pager__list{
+    display: flex;
+    align-items: center;
+}
 .pager__item{
-    display: inline-block;
-    vertical-align: middle;
+    text-align: center;
+    /* display: inline-block;
+    vertical-align: middle; */
 }
 .pager__item:hover{
     background: #353538;
@@ -295,8 +352,12 @@ section.hero{
     margin-bottom: 150px;
 }
 .about::before, .about__desc{
-    display: inline-block;
-    vertical-align: top;
+    /* display: inline-block;
+    vertical-align: top; */
+    border-radius: 4px;
+}
+.about{
+    display: flex;
 }
 .about::before{
     content: "";
@@ -304,11 +365,12 @@ section.hero{
     height: 502px;
     border-radius: 5px;
     background: url("./images/decor/chess.jpg") center center / cover no-repeat;
+    display: block;
 }
 .about__desc{
     background: #202123;
     padding: 72px 102px;
-    width: 786px;
+    max-width: 786px;
     margin-left: -140px;
     margin-top: 107px;
     min-height: 456px;
@@ -330,6 +392,9 @@ section.hero{
 .section--about--margin-bottom{
     margin-bottom: 110px;
 }
+.footer-container{
+    margin-top: auto;
+}
 .footer-container__content{
     border-top: 1px solid #353538;
 }
@@ -337,6 +402,16 @@ section.hero{
     height: 152px;
     position: relative;
     margin-top: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer__col{
+    display: flex;
+    align-items: center;
+}
+.footer__col--align--right{
+    align-items: flex-end;
 }
 .socials__item{
     display: inline-block;
@@ -344,9 +419,10 @@ section.hero{
     margin-right: 6px;
 }
 .socials{
-    top: 27px;
+    /* top: 27px;
     right: 266px;
-    position: absolute;
+    position: absolute; */
+    margin-right: 74px;
 }
 .socials__item:last-child{
     margin-right: 0;
