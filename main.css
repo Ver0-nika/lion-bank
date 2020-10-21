@@ -537,9 +537,9 @@ section.hero{
 
 /* Services page */
 
-.header--services{
+/*.header--services{
     padding-top: 24px;
-}
+}*/
 .top-line{
     min-height: 415px;
     display: flex;
