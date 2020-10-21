@@ -122,10 +122,69 @@ button{
     font-size: 26px;
     margin-bottom: 4px;
 }
+.contacts__dropdown{
+    position: relative;
+}
+.contacts__dropdown:hover .contacts__dropdown-hidden{
+    display: block;
+}
 .contacts__dropdown-title{
     font-size: 13px;
     text-decoration: underline;
     color:#dfb56d;
+}
+.contacts__dropdown-hidden::after{
+    content: '';
+    border: 10px solid transparent;
+    width: 0;
+    height: 0;
+    border-bottom-color: #EDEDED;
+    border-top-width: 0px;
+    opacity: .8;  
+    position: absolute;
+    top: -10px;
+    right: 40px;
+}
+.contacts__dropdown-hidden{
+    width: 160px;
+    height: 60px;
+    opacity: .8;
+    background: #EDEDED;
+    border-radius: 10px;
+    right: 0;
+    top: 30px;
+    position: absolute;
+    display: none;
+}
+.contacts__dropdown-hidden::before{
+    content: '';
+    width: 160px;
+    height: 80px;
+    right: 0;
+    left: 0;
+    top: -20px;
+    position: absolute;
+    display: block;
+}
+.contacts__dropdown-list{
+    position: relative;
+}
+.contacts__dropdown-item{
+    font-size: 13px;
+    color: #1E1F20;
+    left: 15px;
+    top: 30px;
+    position: absolute;
+    white-space: nowrap;
+}
+.contacts__dropdown-item--shedule{
+    font-size: 13px;
+    color: #1E1F20;
+    left: 15px;
+    top: 10px;
+    font-weight: bold;
+    position: absolute;
+    white-space: nowrap;
 }
 .hero__text-section{
     width: 38%;
@@ -544,7 +603,7 @@ section.hero{
 .service:hover{
     background: #f4f5f5;
 }
-.service:hover .btn--services{
+.btn--services:hover{
     background: #dfb56d;
 }
 .service__img{
